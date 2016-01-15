@@ -1,2 +1,15 @@
 # env-tpl
-Render Go templates from Environment Variables
+
+[![Build Status](https://travis-ci.org/arschles/envtpl.svg?branch=master)](https://travis-ci.org/arschles/envtpl)
+
+Render Go templates from Environment Variables. Let's say you have the following template file called `pwd.tpl`:
+
+```
+The current working directory is {{.PWD}}
+```
+
+Run `envtpl -in pwd.tpl`, and you'll see the following printed to STDOUT:
+
+```
+The current working directory is /path/you/executed/from
+```
