@@ -12,8 +12,9 @@ DOCKER_TAG ?= devel
 DOCKER_IMAGE := ${DOCKER_REPO}${DOCKER_ORG}/${DOCKER_IMAGE}:${DOCKER_TAG}
 
 bootstrap:
-
+	@echo "bootstrap not needed"
 test:
+	@echo "no tests yet"
 
 build:
 	${DEV_ENV_PREFIX} -e CGO_ENABLED=0 ${DEV_ENV_IMAGE} go build -a -installsuffix cgo -ldflags '-s' -o envtpl
