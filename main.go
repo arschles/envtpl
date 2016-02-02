@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"text/template"
+
+	template "text/template"
+
+	"github.com/Masterminds/sprig"
 )
 
 func main() {
@@ -17,7 +20,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	tpl, err := template.ParseFiles(*in)
+	tpl, err := template.New(*in).Funcs(sprig.TxtFuncMap()).ParseFiles(*in)
 	if err != nil {
 		fmt.Printf("Error: parsing template %s (%s)\n", *in, err)
 		os.Exit(1)
