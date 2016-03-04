@@ -1,3 +1,3 @@
 package: main
 import:
-- package: github.com/masterminds/sprig
+- package: github.com/Masterminds/sprig

@@ -1,0 +1,8 @@
+hash: 9a13a56fb3837fbdde3274ee4331ca1e072849f06007a1f1bfaa7669ccc3c05d
+updated: 2016-03-04T17:51:40.938237512Z
+imports:
+- name: github.com/aokoli/goutils
+  version: 9c37978a95bd5c709a15883b6242714ea6709e64
+- name: github.com/Masterminds/sprig
+  version: fd057ca403105755181f84645696d705a58852dd
+devImports: []
