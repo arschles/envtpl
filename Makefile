@@ -23,6 +23,9 @@ test:
 build:
 	${DEV_ENV_PREFIX} -e CGO_ENABLED=0 ${DEV_ENV_IMAGE} go build -a -installsuffix cgo -ldflags '-s' -o envtpl
 
+build-cross:
+	${DEV_ENV_PREFIX} -e CGO_ENABLED=0 ${DEV_ENV_IMAGE} gox
+
 docker-build:
 	docker build --rm -t ${DOCKER_IMAGE} .
 
