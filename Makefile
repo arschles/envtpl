@@ -12,7 +12,11 @@ DOCKER_TAG ?= devel
 DOCKER_IMAGE := ${DOCKER_REPO}${DOCKER_ORG}/${DOCKER_IMAGE}:${DOCKER_TAG}
 
 bootstrap:
-	@echo "bootstrap not needed"
+	${DEV_ENV_CMD} glide install
+
+glideup:
+	${DEV_ENV_CMD} glide up
+
 test:
 	@echo "no tests yet"
 
