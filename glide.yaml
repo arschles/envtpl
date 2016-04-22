@@ -1,3 +1,4 @@
 package: main
 import:
 - package: github.com/Masterminds/sprig
+- package: github.com/arschles/assert

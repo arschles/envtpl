@@ -1,8 +1,10 @@
-hash: 9a13a56fb3837fbdde3274ee4331ca1e072849f06007a1f1bfaa7669ccc3c05d
-updated: 2016-03-04T17:51:40.938237512Z
+hash: 3de6518c74a099c6b494cac024246f76fbb18fb187cb85cd0b35e7d2a9226433
+updated: 2016-04-22T14:14:50.485712326-07:00
 imports:
 - name: github.com/aokoli/goutils
   version: 9c37978a95bd5c709a15883b6242714ea6709e64
+- name: github.com/arschles/assert
+  version: d21ecd4884be33397d1298c3738b2b4937c7f499
 - name: github.com/Masterminds/sprig
-  version: fd057ca403105755181f84645696d705a58852dd
+  version: e6494bc7e81206ba6db404d2fd96500ffc453407
 devImports: []
