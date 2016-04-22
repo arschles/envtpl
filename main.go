@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"strings"
 
 	template "text/template"
 
@@ -20,23 +19,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	tpl, err := template.New(*in).Funcs(sprig.TxtFuncMap()).ParseFiles(*in)
+	tpl, err := template.ParseFiles(*in)
 	if err != nil {
 		fmt.Printf("Error: parsing template %s (%s)\n", *in, err)
 		os.Exit(1)
 	}
 
-	envMap := make(map[string]string)
-	envStrs := os.Environ()
-	for _, envStr := range envStrs {
-		spl := strings.SplitN(envStr, "=", 2)
-		if len(spl) != 2 {
-			continue
-		}
-		envMap[spl[0]] = spl[1]
-	}
+	envMap := collectEnv()
 
-	if err := tpl.Execute(os.Stdout, envMap); err != nil {
+	if err := tpl.Funcs(sprig.TxtFuncMap()).Execute(os.Stdout, envMap); err != nil {
 		fmt.Printf("Rendering template (%s)", err)
 		os.Exit(1)
 	}
