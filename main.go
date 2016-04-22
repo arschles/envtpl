@@ -29,7 +29,7 @@ func main() {
 	envMap := make(map[string]string)
 	envStrs := os.Environ()
 	for _, envStr := range envStrs {
-		spl := strings.Split(envStr, "=")
+		spl := strings.SplitN(envStr, "=", 2)
 		if len(spl) != 2 {
 			continue
 		}
