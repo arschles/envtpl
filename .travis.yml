@@ -13,11 +13,11 @@ install:
 script:
 - make test
 deploy:
-  provider: script
+- provider: script
   script: _scripts/cross-build.sh
   on:
     branch: master
-  provider: releases
+- provider: releases
   api_key:
     secure: fBaBLaVK5bSBxl8VDoFtWlFi7Sfq+sDyT2YdiyEpMcZ+/WQWzERLDYYEJD8CHal8r7d7vHGN1PbYNkC22aNDTItpRGkTKu1zjLBVhnfmCDGEGyzREgNPOzJgxzgpw2GArfC1FZWxYLrxpgGqpp1bj6me0L6QnB6EQYmrb743ERm2Mr6rWLUJ0uAeRG+1/Z2fiqJumETa59pz7Frv9TJLoMU3Y9zp6QoWtJ43imwZyE6PuWW+2SoIwhVJ29jqXT5I7RrkkYbJmSGwQmwEFSr2Is7qMv4UEgKfuJptqxc0JBY8zzgj2MiDO0a27BKszG6LtET+JyATu2WeEK0OuXobnXouTAsD8rynZ3Iv+o5PMAzZyMCznmTvkZrOeUML3mFyfM7Ssf03VM2Pi2WqABN0DMN3/sjedZSaisMIOR8HGZrH6Ee9b179dWOf8lRzt95LZgqqiEw1v5S7S5sSxYwKaDZFseaVYBK8zaUEL1hdl8EocNHlHgn4UDXeSU8W7b3j/wZmxnRgY1Kd5hov4pjgA1S7brvnvMgLUBDy9t5GA3VrbzjQujeF6k4grXlljGMPnn/4Cvmbhb42fbuzUz6w0uqJaNduo4+MfiUmTMZ8F/VPx0HYGI0EbWVUZkhLmQDnwhl8SUGzgrrl0NAzNfDurhOYdMuwbCnKux+8vnngVdI=
   file: crossbuild/*
