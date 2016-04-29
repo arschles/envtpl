@@ -4,10 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
-
-	template "text/template"
-
-	"github.com/Masterminds/sprig"
+	"path/filepath"
 )
 
 func main() {
@@ -19,7 +16,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	tpl, err := template.ParseFiles(*in)
+	tpl, err := createTpl(filepath.Base(*in), *in)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: parsing template %s (%s)\n", *in, err)
 		os.Exit(1)
@@ -27,7 +24,7 @@ func main() {
 
 	envMap := collectEnv()
 
-	if err := tpl.Funcs(sprig.TxtFuncMap()).Execute(os.Stdout, envMap); err != nil {
+	if err := renderTpl(tpl, os.Stdout, envMap); err != nil {
 		fmt.Fprintf(os.Stderr, "Rendering template (%s)", err)
 		os.Exit(1)
 	}
