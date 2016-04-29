@@ -18,7 +18,7 @@ glideup:
 	${DEV_ENV_CMD} glide up
 
 test:
-	@echo "no tests yet"
+	${DEV_ENV_CMD} go test $$(glide nv)
 
 build:
 	${DEV_ENV_PREFIX} -e CGO_ENABLED=0 ${DEV_ENV_IMAGE} go build -a -installsuffix cgo -ldflags '-s' -o envtpl
